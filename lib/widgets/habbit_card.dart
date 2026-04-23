@@ -21,19 +21,24 @@ class HabbitCard extends StatelessWidget {
       onTap: () {
         context.push('/draw/${name}');
       },
-      child: Column(
-        children: [
-          Text(name, style: Theme.of(context).textTheme.headlineLarge),
-          Text(description, style: Theme.of(context).textTheme.bodyMedium),
-          Text(
-            'Created at: ${createdAt.toLocal()}',
-            style: Theme.of(context).textTheme.bodySmall,
+      child: Expanded(
+        child: SizedBox(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(name, style: Theme.of(context).textTheme.headlineMedium),
+              Text(description, style: Theme.of(context).textTheme.bodyMedium),
+              Text(
+                'Created at: ${createdAt.toLocal()}',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              Text(
+                'Frequency: $frequency times/day',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ],
           ),
-          Text(
-            'Frequency: $frequency times/day',
-            style: Theme.of(context).textTheme.bodySmall,
-          ),
-        ],
+        ),
       ),
     );
   }

@@ -11,16 +11,17 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          for (var habit in habits)
-            HabbitCard(
-              name: habit.name,
-              description: habit.description,
-              createdAt: habit.createdAt,
-              frequency: habit.frequency,
-            ),
-        ],
+      body: ListView.builder(
+        itemCount: habits.length,
+        itemBuilder: (context, index) {
+          final habit = habits[index];
+          return HabbitCard(
+            name: habit.name,
+            description: habit.description,
+            createdAt: habit.createdAt,
+            frequency: habit.frequency,
+          );
+        },
       ),
     );
   }
