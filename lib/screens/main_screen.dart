@@ -1,5 +1,6 @@
 import 'package:canvas_practice/logic/data/habit_data.dart';
 import 'package:canvas_practice/logic/models/habit.dart';
+import 'package:canvas_practice/widgets/create_habbit_modal.dart';
 import 'package:canvas_practice/widgets/habbit_card.dart';
 import 'package:flutter/material.dart';
 
@@ -13,12 +14,20 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   final List<Habit> habits = habiData;
 
+  void _addHabit(Habit habit) {
+    setState(() => habits.add(habit));
+  }
+
   @override
   Widget build(BuildContext context) {
-    final completedCount = habits.where((habit) => habit.isFinished).length;
+    final completedCount = habits.where((h) => h.isFinished).length;
 
     return Scaffold(
       appBar: AppBar(title: const Text('Habit Tracker')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => showCreateHabitModal(context, _addHabit),
+        child: const Icon(Icons.add),
+      ),
       body: Column(
         children: [
           Padding(
@@ -43,13 +52,11 @@ class _MainScreenState extends State<MainScreen> {
               ],
             ),
           ),
-
           Expanded(
             child: ListView.builder(
               itemCount: habits.length,
               itemBuilder: (context, index) {
                 final habit = habits[index];
-
                 return HabbitCard(
                   name: habit.name,
                   description: habit.description,
@@ -57,9 +64,7 @@ class _MainScreenState extends State<MainScreen> {
                   frequency: habit.frequency,
                   addictionLevel: habit.addictionLevel,
                   onChanged: (value) {
-                    setState(() {
-                      habit.isFinished = value;
-                    });
+                    setState(() => habit.isFinished = value);
                   },
                 );
               },
