@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class DrawScreen extends StatelessWidget {
-  const DrawScreen({super.key});
+  const DrawScreen({super.key, this.name});
+
+  final String? name;
 
   @override
   Widget build(BuildContext context) {

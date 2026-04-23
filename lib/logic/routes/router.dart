@@ -6,6 +6,16 @@ final appRouter = GoRouter(
   initialLocation: '/',
   routes: [
     GoRoute(path: '/', builder: (context, state) => const MainScreen()),
-    GoRoute(path: '/draw', builder: (context, state) => const DrawScreen()),
+    GoRoute(
+      path: '/draw',
+      builder: (context, state) => const DrawScreen(),
+      routes: [
+        GoRoute(
+          path: ':habitName',
+          builder: (context, state) =>
+              DrawScreen(name: state.pathParameters['habitName']!),
+        ),
+      ],
+    ),
   ],
 );
