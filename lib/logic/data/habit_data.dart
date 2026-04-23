@@ -6,7 +6,7 @@ List<Habit> habiData = [
     description: 'Drink one energy drink every day.',
     isFinished: false,
     frequency: 7,
-    addictionLevel: 1,
+    addictionLevel: 1.0,
   ),
   Habit(
     name: 'Read Books',

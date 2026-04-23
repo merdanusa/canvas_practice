@@ -15,7 +15,7 @@ class ArcPainter extends CustomPainter {
     final trackPaint = Paint()
       ..color = Colors.grey.withOpacity(0.2)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 16
+      ..strokeWidth = 14
       ..strokeCap = StrokeCap.round;
 
     canvas.drawArc(rect, -pi / 2, 2 * pi, false, trackPaint);
@@ -23,7 +23,7 @@ class ArcPainter extends CustomPainter {
     final arcPaint = Paint()
       ..color = Colors.deepPurple
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 16
+      ..strokeWidth = 10
       ..strokeCap = StrokeCap.round;
 
     canvas.drawArc(rect, -pi / 2, 2 * pi * progress, false, arcPaint);

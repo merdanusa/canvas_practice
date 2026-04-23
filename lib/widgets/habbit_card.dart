@@ -29,7 +29,10 @@ class HabbitCard extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         child: Row(
           children: [
-            CustomPaint(size: const Size(70, 70), painter: ArcPainter(0.7)),
+            CustomPaint(
+              size: const Size(70, 70),
+              painter: ArcPainter(addictionLevel),
+            ),
 
             const SizedBox(width: 12),
 
