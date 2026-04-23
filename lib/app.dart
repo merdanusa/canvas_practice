@@ -1,5 +1,5 @@
 import 'package:canvas_practice/logic/constants/theme.dart';
-import 'package:canvas_practice/logic/routes/router.dart';
+import 'package:canvas_practice/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -7,9 +7,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routerConfig: appRouter,
+      home: MainScreen(),
       title: 'Habit Tracker',
       theme: appTheme,
       themeMode: ThemeMode.system,
