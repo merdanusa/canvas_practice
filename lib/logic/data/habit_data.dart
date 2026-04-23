@@ -1,6 +1,6 @@
 import 'package:canvas_practice/logic/models/habit.dart';
 
-List<Habit> habits = [
+List<Habit> habit_data = [
   Habit(
     name: 'Drinking Energy Drink',
     description: 'Drink one energy drink every day.',
