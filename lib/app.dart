@@ -1,4 +1,4 @@
-import 'package:canvas_practice/constants/theme.dart';
+import 'package:canvas_practice/logic/constants/theme.dart';
 import 'package:canvas_practice/logic/routes/router.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +11,7 @@ class App extends StatelessWidget {
       routerConfig: appRouter,
       title: 'Habit Tracker',
       theme: appTheme,
+      themeMode: ThemeMode.system,
     );
   }
 }
